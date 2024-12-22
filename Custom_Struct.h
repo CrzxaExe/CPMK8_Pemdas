@@ -5,11 +5,13 @@
 
 using namespace std;
 
+// objel Volume
 struct Volume {
     float current;
     float max;
 };
 
+// objek Fish
 struct Fish {
     string type;
     int count;

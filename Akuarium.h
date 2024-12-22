@@ -17,10 +17,11 @@ class Akuarium {
         float dirtyPercen;
 
     public:
-        Akuarium(float maxVolume, int currentFishCount, float currentTemp);
+        Akuarium(float maxVolume, float currentTemp);
 
         // Fungsi untuk ikan
         int getFishCount() const;
+        int getTotalFishCount () const;
         string stringFish();
         list<Fish>::iterator getFish(string fishType);
         void addFish(string fishType, int amount);
@@ -48,6 +49,7 @@ class Akuarium {
 
         // Fungsi lain
         void display();
+        string isFishStress();
 };
 
 #endif // !AKUARIUM_H
