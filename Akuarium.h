@@ -50,6 +50,7 @@ class Akuarium {
         // Fungsi lain
         void display();
         string isFishStress();
+        string solution();
 };
 
 #endif // !AKUARIUM_H

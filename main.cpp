@@ -114,11 +114,23 @@ int main() {
             // format: filltanki <nilai>
             float amount = stof(words[1]);
 
+            if(akuarium1.getTanki().current + amount > akuarium1.getTanki().max) {
+                akuarium1.setCurrentTanki(akuarium1.getTanki().max);
+                cout << "Tanki full" << endl;
+                continue;
+            }
+
             akuarium1.addCurrentTanki(amount);
             cout << "Mengisi volume tanki sebanyak " << amount << "L" << endl;
         } else if(words[0] == "draintanki") { // Mengurangi tanki
             // format: draintanki <nilai>
             float amount = stof(words[1]);
+
+            if(akuarium1.getTanki().current < amount) {
+                akuarium1.setCurrentTanki(0);
+                cout << "Tanki kosong" << endl;
+                continue;
+            }
 
             akuarium1.minCurrentTanki(amount);
             cout << "Membuang volume tanki sebanyak " << amount << "L" << endl;

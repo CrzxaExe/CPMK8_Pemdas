@@ -104,12 +104,10 @@ float Akuarium::tankiCapacity() {
 }
 // Metode untuk menambahkan volume air akuarium
 void Akuarium::addCurrentTanki(float amount) {
-    if(tanki.current + amount > tanki.max) return setCurrentTanki(tanki.max);
     tanki.current += amount;
 }
 // Metode untuk mengurangi volume air akuarium
 void Akuarium::minCurrentTanki(float amount) {
-    if(tanki.current - amount < 0) return setCurrentTanki(0);
     addCurrentTanki(-amount);
 }
 // Metode untuk mengatur volume air akuarium menjadi value
@@ -145,11 +143,21 @@ void Akuarium::display() {
         << "Fish Detail    : " << stringFish() << endl
         << "Fish Stres     : " << isFishStress() << endl
         << "Temperature    : " << getTemp() << " deg" << endl
-        << "Dirty Percen   : " << getDirty() << "%" << endl << endl;
+        << "Dirty Percen   : " << getDirty() << "%" << endl
+        << "Solution       : " << solution() << endl << endl;
 }
 
 string Akuarium::isFishStress() {
     string res = "False";
     if(getFishCount() > getTotalFishCount() || getDirty() > 30) res = "True";
+    return res;
+}
+
+string Akuarium::solution() {
+    string res = "";
+
+    if(getFishCount() > getTotalFishCount()) res.append("\n- Kurangi ikan");
+    if(dirtyPercen > 30) res.append("\n- Bersihkan akuariumnya");
+
     return res;
 }
