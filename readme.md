@@ -36,14 +36,14 @@ run:
   + ADT Class Akuarium merupakan class buatan yang memiliki properti berupa, container ikan, tanki , tingkat kekotoran dan suhu, class ini memiliki metode yang dapat digunakan untuk mengubah, ,menampilkan, mengatur dan menghapus properti yang ada pada class tersebut.
 
 - aktivitas
-    jumat, 20 desember jam 19:00 projek ini dimulai dan pending pada jam 21:00
+  jumat, 20 desember jam 19:00 projek ini dimulai dan pending pada jam 21:00
   +penentuan ide dan judul dari hasil pemikiran anggota dan menentukan hasilnya hari itu juga
   +kelompok sudah membuat garis besarannya projek dan mulai mencicil tugasnya
 
-    sabtu, 21 desember jam 20:00 projek ini dimulai dan pending pada jam 21:00
+  sabtu, 21 desember jam 20:00 projek ini dimulai dan pending pada jam 21:00
   +kelompok sudah melanjutkan projek
 
-    minggu, 22 desember jam 19:00 projek ini dimulai dan selesai pada jam 22:00 
+  minggu, 22 desember jam 19:00 projek ini dimulai dan selesai pada jam 22:00 
   +kelompok menyelesaikan projekan
   +kelompok melakukan quality control
 
