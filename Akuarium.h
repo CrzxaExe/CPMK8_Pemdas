@@ -2,14 +2,16 @@
 #define AKUARIUM_H
 
 #include <iostream>
-#include "Volume.h"
+#include <list>
+#include <iterator>
+#include "Custom_Struct.h"
 
 using namespace std;
 
 class Akuarium {
     // Properti akuarium
     private:
-        int fishCount;
+        list<Fish> fishs = {};
         float temp;
         Volume tanki;
         float dirtyPercen;
@@ -19,9 +21,11 @@ class Akuarium {
 
         // Fungsi untuk ikan
         int getFishCount() const;
-        void addFish(int amount);
-        void minFish(int amount);
-        void setFish(int value);
+        string stringFish();
+        list<Fish>::iterator getFish(string fishType);
+        void addFish(string fishType, int amount);
+        void minFish(string fishType, int amount);
+        void setFish(string fishType, int value);
 
         // Fungsi temperatur
         float getTemp() const;
@@ -43,7 +47,6 @@ class Akuarium {
         void setDirty(float value);
 
         // Fungsi lain
-        float getFishStressCount();
         void display();
 };
 

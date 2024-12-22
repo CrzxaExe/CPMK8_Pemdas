@@ -1,10 +1,12 @@
 #include <iostream>
+#include <list>
+#include <iterator>
+#include <algorithm>
 
 #include "Akuarium.h"
-// #include "Volume.h"
+#include "Custom_Struct.h"
 
 Akuarium::Akuarium(float maxVolume, int currentFishCount, float currentTemp) {
-    fishCount = currentFishCount;
     temp = currentTemp;
     tanki.max = maxVolume;
     tanki.current = maxVolume;
@@ -12,16 +14,53 @@ Akuarium::Akuarium(float maxVolume, int currentFishCount, float currentTemp) {
 }
 
 int Akuarium::getFishCount() const {
-    return fishCount;
+    int count = 0;
+
+    for(const Fish f : fishs) {
+        count += f.count;
+    }
+    return count;
 }
-void Akuarium::addFish(int amount) {
-    fishCount += amount;
+string Akuarium::stringFish() {
+    string res;
+    for(const Fish f : fishs) {
+        res.append("\n- " + f.type + ": " + to_string(f.count));
+    }
+    return res;
 }
-void Akuarium::minFish(int amount) {
-    addFish(-amount);
+list<Fish>::iterator Akuarium::getFish(string fishType) {
+    list<Fish>::iterator it = find_if(fishs.begin(), fishs.end(), [&fishType](const Fish& fish) {
+        return fish.type == fishType;
+    });
+    return it;
 }
-void Akuarium::setFish(int value) {
-    fishCount = value;
+void Akuarium::addFish(string fishType, int amount) {
+    list<Fish>::iterator it = getFish(fishType);
+    if(it != fishs.end()) {
+        it->count += amount;
+    } else {
+        fishs.push_back({ type: fishType, count: amount });
+    }
+}
+void Akuarium::minFish(string fishType, int amount) {
+    list<Fish>::iterator it = getFish(fishType);
+
+    if(it == fishs.end()) return;
+
+    if(it->count <= amount) {
+        fishs.erase(it);
+    } else {
+        it->count -= amount;
+    }
+}
+void Akuarium::setFish(string fishType, int value) {
+    list<Fish>::iterator it = getFish(fishType);
+
+    if(it != fishs.end()) {
+        addFish(fishType, value);
+    } else {
+        it->count = value;
+    }
 }
 
 float Akuarium::getTemp() const {
@@ -41,7 +80,7 @@ Volume Akuarium::getTanki() const {
     return tanki;
 }
 float Akuarium::tankiCapacity() {
-    return getTanki().max / 100;
+    return getTanki().max * 1000;
 }
 void Akuarium::addCurrentTanki(float amount) {
     tanki.current += amount;
@@ -69,8 +108,9 @@ void Akuarium::setDirty(float value) {
 void Akuarium::display() {
     cout << "Akuarium" << endl
         << "Volume         : " << getTanki().current << "/" << getTanki().max << endl\
-        << "Tanki Capacity : " << tankiCapacity() << endl
+        << "Tanki Capacity : " << tankiCapacity() << "L" << endl
         << "Fish Count     : " << getFishCount() << endl
+        << "Fish Detail    : " << stringFish() << endl
         << "Temperature    : " << getTemp() << "deg" << endl
-        << "Dirty Percen   : " << getDirty() << "%" << endl;
+        << "Dirty Percen   : " << getDirty() << "%" << endl << endl;
 }
