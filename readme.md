@@ -27,7 +27,7 @@ run:
 # laporan kerkel cpmk 8
 - Tujuan ```dibuatnya adt akuarium ini adalah untuk mengetahui apa saja aspek aspek penting yang mempengaruhi kehidupan ikan hias sehingga ikan-ikan tersebut dapat hidup dengan sehat dan tentram.```
 
-- Fungsi ```dari program tersebut yakni untuk mensimulasikan kehidupan di akuarium yang dapat divisualisasikan melalui input adt akuarium yang memiliki struktur berupa volume maksimal (maxVolume), jumlah ikan sekarang (currentFishCount), dan suhu akuarium (currentTemp). yang kemudian akan dapat ditampilkan secara detail yang cukup.```
+- Fungsi ```dari program tersebut yakni untuk mensimulasikan kehidupan di akuarium yang dapat divisualisasikan melalui input sistem adt akuarium yang memiliki struktur berupa volume maksimal (maxVolume) dan suhu akuarium (currentTemp), yang kemudian akan ditampilkan dengan detail yang cukup. Kemudian akan diberikan beberapa opsi input user seperti 'addfish', 'clean', 'draintanki' dan 'filltanki'. Terdapat pengulangan pada program ini yaitu setiap 5 detik akan ada perubahan pada suhu dan tingkat kekotoran akuarium tersebut. Dengan menginput 'v' akan menampilkan detail-detail mengenai status akuarium dan masalah apa yang menimbulkan stress ikan. Untuk keluar dari program, user menginputkan karakter 'q' pada terminal.```
 
 - penjelasan singkat program utama
   + program utama terdapat pada main.cpp, sebagai main function yang akan dijalankan untuk simulasi sebuah akuarium yang bisa di operasikan via input
