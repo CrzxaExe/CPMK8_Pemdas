@@ -48,7 +48,7 @@ class Akuarium {
         void setDirty(float value);
 
         // Fungsi lain
-        void display();
+        void display(ostream& out);
         string isFishStress();
         string solution();
 };

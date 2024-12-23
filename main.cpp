@@ -4,6 +4,7 @@
 #include <atomic>
 #include <chrono>
 #include <thread>
+#include <fstream>
 
 #include "Akuarium.h"
 #include "Custom_Struct.h"
@@ -36,8 +37,9 @@ int main() {
         << "- clean                             membersihkan akuarium" << endl
         << "- downtemp, uptemp, settemp         mengatur nilai suhu akuarium, <downtemp|uptemp|settemp> <nilai>" << endl
         << "- draintanki, filltanki, settanki   mengatur tanki, <draintanki|filltanki|settanki> <nilai>" << endl
-        << "- q                                 keluar dari program" << endl
-        << "- v                                 menampilkan status akuarium" << endl << endl;
+        << "- v                                 menampilkan status akuarium" << endl
+        << "- x                                 export status akuarium saat ini" << endl
+        << "- q                                 keluar dari program" << endl << endl;
 
 
     while(isRunning) { // berjalan sampai var isRunning == false atau user menekan q
@@ -56,7 +58,7 @@ int main() {
             cout << "Mematikan Program" << endl;
             isRunning = false;
         } else if(words[0] == "v") { // jika menekan v maka akan menampilkan properti akuarium1
-            akuarium1.display();
+            akuarium1.display(cout);
         } else if(words[0] == "clean") { // membersikan akuarium
             akuarium1.setDirty(0.0);
             cout << "Membersikan akuarium" << endl;
@@ -140,6 +142,16 @@ int main() {
 
             akuarium1.setCurrentTanki(amount);
             cout << "Mengatur volume tanki menjadi " << amount << "L" << endl;
+        } else if(words[0] == "x") { // Export ke dalam csv
+            ofstream outFile("output.csv");
+
+            if (!outFile.is_open()){
+                cerr << "Error: Tidak dapat membuka file untuk menulis!" << endl;
+                return 1;
+            }
+            akuarium1.display(outFile);
+            outFile.close();
+            cout << "Status akuarium berhasil disimpan ke file output.csv" << endl;
         }
     }
     updateFunction.join(); // menjalankan prosedur looping pada background

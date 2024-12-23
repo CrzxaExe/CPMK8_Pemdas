@@ -135,8 +135,8 @@ void Akuarium::setDirty(float value) {
 }
 
 // Menampilkan properti akuarium
-void Akuarium::display() {
-    cout << "Akuarium" << endl
+void Akuarium::display(ostream& out) {
+    out << "Akuarium" << endl
         << "Volume         : " << getTanki().current << "/" << getTanki().max << " cm^3" << endl\
         << "Tanki Capacity : " << tankiCapacity() << "L" << endl
         << "Fish Count     : " << getFishCount() << "/" << getTotalFishCount() << " Fish" << endl
