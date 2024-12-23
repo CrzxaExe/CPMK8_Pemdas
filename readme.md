@@ -25,16 +25,19 @@ run:
 
 
 # laporan kerkel cpmk 8
-- Tujuan ```dibuatnya adt akuarium ini adalah untuk mengetahui apa saja aspek aspek penting yang mempengaruhi kehidupan ikan hias sehingga ikan-ikan tersebut dapat hidup dengan sehat dan tentram.```
+- ### Tujuan 
+dibuatnya adt akuarium ini adalah untuk mengetahui apa saja aspek aspek penting yang mempengaruhi kehidupan ikan hias sehingga ikan-ikan tersebut dapat hidup dengan sehat dan tentram.
 
-- Fungsi ```dari program tersebut yakni untuk mensimulasikan kehidupan di akuarium yang dapat divisualisasikan melalui input sistem adt akuarium yang memiliki struktur berupa volume maksimal (maxVolume) dan suhu akuarium (currentTemp), yang kemudian akan ditampilkan dengan detail yang cukup. Kemudian akan diberikan beberapa opsi input user seperti 'addfish', 'clean', 'draintanki' dan 'filltanki'. Terdapat pengulangan pada program ini yaitu setiap 5 detik akan ada perubahan pada suhu dan tingkat kekotoran akuarium tersebut. Dengan menginput 'v' akan menampilkan detail-detail mengenai status akuarium dan masalah apa yang menimbulkan stress ikan. Untuk keluar dari program, user menginputkan karakter 'q' pada terminal.```
+- ### Fungsi 
+Fungsi dari program tersebut yakni untuk mensimulasikan kehidupan di akuarium yang dapat divisualisasikan melalui input sistem adt akuarium yang memiliki struktur berupa volume maksimal (maxVolume) dan suhu akuarium (currentTemp), yang kemudian akan ditampilkan dengan detail yang cukup. Kemudian akan diberikan beberapa opsi input user seperti 'addfish', 'clean', 'draintanki' dan 'filltanki'. Terdapat pengulangan pada program ini yaitu setiap 5 detik akan ada perubahan pada suhu dan tingkat kekotoran akuarium tersebut. Dengan menginput 'v' akan menampilkan detail-detail mengenai status akuarium dan masalah apa yang menimbulkan stress ikan. Untuk keluar dari program, user menginputkan karakter 'q' pada terminal.
 
-- penjelasan singkat program utama
-  + program utama terdapat pada main.cpp, sebagai main function yang akan dijalankan untuk simulasi sebuah akuarium yang bisa di operasikan via input
-  + dalam main.cpp terdapat import ke arah Akuarium.h dan Akuarium.cpp sebuah module buatan dari class Akuarium beserta metodenya.
-  + terdapat import Custom_Struct.h sebagai module buatan untuk menyimpan struct yang digunakan.
+- ## penjelasan singkat program utama
+  + program utama terdapat pada ```main.cpp```, sebagai main function yang akan dijalankan untuk simulasi sebuah akuarium yang bisa di operasikan via input
+  + dalam ```main.cpp``` terdapat import ke arah ```Akuarium.h``` dan ```Akuarium.cpp``` sebuah module buatan dari class Akuarium beserta metodenya.
+  + terdapat import ```Custom_Struct.h``` sebagai module buatan untuk menyimpan struct yang digunakan.
   + ADT Class Akuarium merupakan class buatan yang memiliki properti berupa, container ikan, tanki , tingkat kekotoran dan suhu, class ini memiliki metode yang dapat digunakan untuk mengubah, ,menampilkan, mengatur dan menghapus properti yang ada pada class tersebut.
-- lebih lengkapnya :
+
+  - ### lebih lengkapnya :
     + Akuarium::getFishCount(), ```Metode untuk mengembalikan nilai total ikan yang ada pada akuarium```
     + Akuarium::getTotalFishCount(), ```Metode untuk mengembalikan kapasitas maksimal ikan yang bisa ditampung akuarium```
     + Akuarium::stringFish(), ```Metode untuk mengembalikan data string dari ikan yang ada pada akuarium```
@@ -68,7 +71,7 @@ run:
 
 
 
-- aktivitas
+- ### aktivitas
   + jumat, 20 desember jam 19:00 projek ini dimulai dan pending pada jam 21:00
     + penentuan ide dan judul dari hasil pemikiran anggota dan menentukan hasilnya hari itu juga
     + kelompok sudah membuat garis besarannya projek dan mulai mencicil tugasnya
@@ -81,8 +84,8 @@ run:
     + kelompok melakukan quality control
 
 
-- hambatan
-  + anggota tidak bertemu selama pengerajaan karena sudah pulang dan punya kesibukan pada waktu masing-masing (tetapi secara online masih bisa)
+- ### hambatan
+  + anggota tidak bertemu selama pengerjaan karena sudah pulang dan punya kesibukan pada waktu masing-masing (tetapi secara online masih bisa dilakukan)
 
-- kesimpulan
+- ### kesimpulan
   + program sesuai dengan tujuan awal, simulasi berhasil dijalankan dengan inputan inputan yang ada. pada prosesnya program utama dapat berjalan lancar dengan fungsi dan perintah yang ada secara selaras, untuk output sendiri sesuai dengan apa yang diinginkan
